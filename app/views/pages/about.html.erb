@@ -1,0 +1,17 @@
+<h1>About us 🤡</h1>
+
+<h2>Meet our team 👋</h2>
+
+<form action="/about" method="get">
+  <input type="text" name="member" value="<%= params[:member] %>" placeholder="Who are you looking for?">
+  <input type="submit">
+</form>
+
+<ul>
+  <% @members.shuffle.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Home", root_path %>
+<%= link_to "Contact us", contact_path  %>
